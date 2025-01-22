@@ -1,3 +1,104 @@
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+#myLinks .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ .logo-img {
+  height: 50px; /* Adjust the size as needed */
+  max-width: 200px; /* Maintain aspect ratio */
+  vertical-align: middle; /* Center the image vertically */
+  display: inline-block;
+  padding: 5px 0;
+}
+#myLinks .close-btn:hover {
+  color: #ff4747;
+}
+
+.topnav {
+  margin-top: 10px;
+  max-width: 400px;
+  overflow: hidden;
+  background-color: #184486;
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  padding: 10px;
+  /* box-shadow: #c71a1a; */
+}
+
+.topnav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: block;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+/* Slide-in menu styles */
+#myLinks {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden off-screen */
+  height: 100%;
+  width: 250px;
+  background-color: #184486;
+  overflow-y: auto;
+  transition: 0.3s; /* Smooth slide-in effect */
+  /* box-shadow: -4px 0 10px rgba(210, 18, 18, 0.2)0.2); */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+#myLinks a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+#myLinks a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Show the menu when active */
+#myLinks.show {
+  right: 0;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #7AB8FD 0%, #004899 55%);
@@ -7,8 +108,10 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-}
+  animation: fadeIn 1.5s ease-out; /* Fade in the whole body on page load */
 
+}
+/* General Reset */
 .header-img {
   width: 80%; /* Adjusted for responsiveness */
   max-width: 360px; 
@@ -17,6 +120,94 @@ body {
   display: flex;
   align-self: center;
   margin-top: 20px;
+}
+
+
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 1;
+  width: 100%;
+  height: 100%; 
+  opacity: 0.1; /* Adjust opacity as needed */
+  pointer-events: none; /* Prevent clicks from affecting the image */
+  z-index: -1;
+}
+
+.background-img img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+.header-img {
+  width: 80%; /* Adjusted for responsiveness */
+  max-width: 360px; 
+  height: auto;
+  display: flex;
+  align-self: center;
+  margin-top: 20px;
+  scale: 0.8;
+}
+
+.welcome-message {
+  color: white;
+  background-color: rgba(0, 51, 102, 0.7); /* Transparent background with a hint of blue */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: 1; /* Ensure the opacity is set to 1 for visibility */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
+  animation: fadeIn 1.5s ease-out; /* Smooth fade-in animation */
+  font-family: 'Roboto', sans-serif; /* Professional, modern font */
+}
+
+
+/* Title styling */
+.welcome-message h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffdd00; /* Yellow color for emphasis */
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* List styling */
+.welcome-message ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.welcome-message li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #f5f5f5; /* Soft off-white text */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for list items */
+.welcome-message li:hover {
+  transform: translateX(5px); /* Slight shift on hover */
+  color: #ffdd00; /* Highlight with yellow color */
+}
+
+/* Strong emphasis for questions */
+.welcome-message strong {
+  color: #ffdd00; /* Highlighted with yellow */
+  font-weight: bold;
+}
+
+/* Smooth transition for entire message */
+.welcome-message p {
+  margin: 8px 0;
+  color: #f0f0f0; /* Light gray text for better readability */
 }
 
 .chat-container {
@@ -34,12 +225,28 @@ body {
 }
 
 .chat-box {
+  position: relative;
   width: 100%;
   padding: 10px;
+  height:300px;
   flex: 1;
   overflow-y: auto;
   display: flex; /* Enable flexbox for alignment */
   flex-direction: column; /* Stack messages vertically */
+  animation: fadeIn 1.5s ease-out; /* Fade in the whole body on page load */
+}
+
+.chat-content {
+  position: absolute; /* Position chat content absolutely within chat-box */
+  top: 0; 
+  left: 0; 
+  right: 0;
+  width: 100%; 
+  height: 100%; /* Match chat-box height */
+  overflow-y: auto; /* Enable scrolling for chat content */
+  padding: 10px; 
+  z-index: 1;
+  font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol !important;
 }
 
 .footer {
@@ -234,4 +441,9 @@ button {
     opacity: 1;
     color: black; /* Adjust to your desired final text color */
   }
+}
+
+/*Contact Us */
+.contact-us-div{
+  background-color: #004899;
 }
