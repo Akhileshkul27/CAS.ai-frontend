@@ -93,3 +93,12 @@ sendBtn.addEventListener('click', async () => {
     addMessage(`Error: ${error.message}`, 'bot');
   }
 });
+function myFunction() {
+  const myLinks = document.getElementById("myLinks");
+  myLinks.classList.add("show"); // Slide in
+}
+
+function closeMenu() {
+  const myLinks = document.getElementById("myLinks");
+  myLinks.classList.remove("show"); // Slide out
+}
