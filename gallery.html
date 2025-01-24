@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gallery.css">
+    <title>About Us - Chaitanya Aditya Solar</title>
+</head>
+
+<body>
+    <!-- Load an icon library for a hamburger menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="home.html" class="active">
+            <img src="header.png" alt="Chaitanya Aditya Solar" class="logo-img">
+        </a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <!-- Navigation links -->
+        <div id="myLinks">
+            <a href="javascript:void(0);" class="close-btn" onclick="closeMenu()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="about_us.html">About Us</a>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="aboutus-container">
+        <div class="water-heater">
+            <h3>Solar Water Heater</h3>
+            <div class="images-container">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+        </div>
+        <div class="roof-top">
+            <h3>Solar Electricity System</h3>
+            <div class="images-container">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+        </div>
+        <div class="heat-pump">
+            <h3>Heat Pump</h3>
+            <div class="images-container">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Powered by AI - Chaitanya Aditya Solar.
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const waterHeaterImages = [
+            "IMG-20250124-WA0036.jpg",
+            "IMG-20250124-WA0037.jpg",
+            "IMG-20250124-WA0038.jpg",
+            "IMG-20250124-WA0039.jpg",
+            "IMG-20250124-WA0040.jpg",
+            "IMG-20250124-WA0041.jpg",
+            "IMG-20250124-WA0042.jpg",
+            "IMG-20250124-WA0043.jpg",
+            "IMG-20250124-WA0044.jpg",
+            "IMG-20250124-WA0045.jpg",
+            "IMG-20250124-WA0046.jpg",
+            "IMG-20250124-WA0047.jpg",
+            "IMG-20250124-WA0048.jpg",
+            "IMG-20250124-WA0049.jpg",
+            "IMG-20250124-WA0050.jpg",
+            "IMG-20250124-WA0051.jpg",
+            "IMG-20250124-WA0052.jpg",
+            "IMG-20250124-WA0054.jpg",
+            // "IMG-20250124-WA0055.jpg",
+            // "IMG-20250124-WA0056.jpg",
+        ];
+        const roofTopImages = [
+            // Add your roof top system images here
+            "IMG-20250124-WA0009.jpg",
+            "IMG-20250124-WA0010.jpg",
+            "IMG-20250124-WA0011.jpg",
+            "IMG-20250124-WA0015.jpg",
+            "IMG-20250124-WA0016.jpg",
+            "IMG-20250124-WA0017.jpg",
+            "IMG-20250124-WA0018.jpg",
+            "IMG-20250124-WA0019.jpg",
+            "IMG-20250124-WA0020.jpg",
+            "IMG-20250124-WA0021.jpg",
+            "IMG-20250124-WA0022.jpg",
+            "IMG-20250124-WA0023.jpg",
+            "IMG-20250124-WA0024.jpg",
+            "IMG-20250124-WA0026.jpg",
+            "IMG-20250124-WA0028.jpg",
+            "IMG-20250124-WA0029.jpg",
+            "IMG-20250124-WA0030.jpg",
+            "IMG-20250124-WA0031.jpg",
+            "IMG-20250124-WA0032.jpg",
+            "IMG-20250124-WA0033.jpg",
+            "IMG-20250124-WA0034.jpg",
+            "IMG-20250124-WA0035.jpg",
+            "IMG-20250124-WA0053.jpg",
+            "IMG-20250124-WA0058.jpg",
+
+        ];
+
+        const heatPumpImages = [
+            // Add your heat pump images here
+            "IMG-20250124-WA0001.jpg",
+            "IMG-20250124-WA0002.jpg",
+            "IMG-20250124-WA0004.jpg",
+            "IMG-20250124-WA0005.jpg",
+            "IMG-20250124-WA0007.jpg",
+            "IMG-20250124-WA0008.jpg",
+        ];
+        function loadImagesForSection(images, sectionSelector, folderName) {
+            const imagesContainer = document.querySelector(sectionSelector);
+
+            if (!imagesContainer) {
+                console.error(`Container not found for selector: ${sectionSelector}`);
+                return;
+            }
+
+            images.forEach((imgName) => {
+                const img = document.createElement("img");
+                img.src = `${folderName}/${imgName}`; // Use the specific folder name
+                img.alt = `${folderName.replace('-', ' ').replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()))} Image`;
+                img.onerror = () => console.error(`Failed to load image: ${img.src}`);
+                imagesContainer.appendChild(img);
+            });
+        }
+
+        // Load images with specific folder names
+        loadImagesForSection(waterHeaterImages, ".water-heater .images-container", "waterheater");
+        loadImagesForSection(roofTopImages, ".roof-top .images-container", "ROOFTOP");
+        loadImagesForSection(heatPumpImages, ".heat-pump .images-container", "HEATPUMP");
+    </script>
+</body>
+
+</html>
