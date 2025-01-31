@@ -69,7 +69,7 @@ form.addEventListener('submit', async (e) => {
     const phoneNumbers = data.phoneNumbers.map(num => String(num).trim());
     if (phoneNumbers.includes(userPhoneNumber)) {
       alert('Already Registered, Welcome to Chaitanya Aditya Solar!');
-      window.location.href = 'index.html'; // Redirect to index.html
+      window.location.href = 'home.html'; // Redirect to index.html
       return;
     }
 
@@ -83,7 +83,7 @@ form.addEventListener('submit', async (e) => {
     const postData = await postResponse.json();
     if (postData.result === 'success') {
       alert('Thank you! Registered successfully.');
-      window.location.href = 'index.html'; // Redirect on success
+      window.location.href = 'home.html'; // Redirect on success
       // form.reset();
     } else {
       alert(postData.message || 'Unexpected error occurred.');
