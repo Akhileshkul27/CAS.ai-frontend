@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Chaitanya-Aditya-Solar</title>
+</head>
+
+<body>
+  
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Top Navigation Menu -->
+  <div class="topnav">
+    <a href="home.html" class="active">
+      <img  src="header.png" alt="Sudarshan Saur" class="logo-img">
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <!-- Navigation links (hidden by default) -->
+    <div id="myLinks">
+      <a href="javascript:void(0);" class="close-btn" onclick="closeMenu()">&times;</a>
+      <a href="home.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about_us.html">About Us</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    
+  </div>
+
+  <!-- <img class="header-img" src="header.png" alt="Sudarshan Saur"> -->
+  <div class="chat-container">
+    <div class="chat-box" id="chat-box">
+      <div class="welcome-message fade-in">
+        <div class="background-img">
+          <img src="file.png" alt="background">
+        </div>
+        <h3>Welcome to <strong>Chaitanya Aditya Solar AI Assistant! 🤗</strong></h3>
+        <p>🌞 I am here to help you explore and understand our solar products.</p>
+        <p><strong>You can ask questions like:</strong></p>
+        <ul>
+          <li>1. What are the products that Chaitanya Aditya Solar Shopee sell?</li>
+          <li>2. How does a solar lamp work?</li>
+          <li>3. Do you have solar rooftop systems?</li>
+          <li>4. Provide me contact details.</li>
+        </ul>
+        <p><strong>Feel free to ask!</strong></p>
+      </div>
+      <div class="chat-content"> 
+
+      </div>
+      
+    </div>
+    <div class="input-box">
+      <input type="text" id="user-input" placeholder="Ask me something...">
+      <button id="send-btn"><img src="send.png" alt="Send"></button>
+    </div>
+    <div class="footer">
+      Powered by AI - Chaitanya Aditya Solar.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

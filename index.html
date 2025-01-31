@@ -4,68 +4,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Chaitanya-Aditya-Solar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #7AB8FD 0%, #004899 55%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    
+
+    h4 {
+      font-size: 24px;
+      color: #004899;
+      margin-bottom: 20px;
+    }
+    input::placeholder{
+        color: #000000;
+        opacity: 0.1;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #004899;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: orangered;
+    }
+      /* Spinner Styles */
+    .spinner {
+      display: none;
+      margin-top: 10px;
+      
+    }
+
+    .spinner div {
+      width: 10px;
+      height: 10px;
+      background-color: #004899;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .spinner div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .spinner div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #004899;
+    }
+  </style>
 </head>
 
 <body>
-  
-  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="container">
+    <img src="header.png" alt="Company Logo">
 
-  <!-- Top Navigation Menu -->
-  <div class="topnav">
-    <a href="index.html" class="active">
-      <img  src="header.png" alt="Sudarshan Saur" class="logo-img">
-    </a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-    <!-- Navigation links (hidden by default) -->
-    <div id="myLinks">
-      <a href="javascript:void(0);" class="close-btn" onclick="closeMenu()">&times;</a>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="about_us.html">About Us</a>
-    </div>
-    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-    
-  </div>
+    <form method="post" action="home.html" name="contact-form">
+      <h4>Login</h4>
 
-  <!-- <img class="header-img" src="header.png" alt="Sudarshan Saur"> -->
-  <div class="chat-container">
-    <div class="chat-box" id="chat-box">
-      <div class="welcome-message fade-in">
-        <div class="background-img">
-          <img src="file.png" alt="background">
-        </div>
-        <h3>Welcome to <strong>Chaitanya Aditya Solar AI Assistant! 🤗</strong></h3>
-        <p>🌞 I am here to help you explore and understand our solar products.</p>
-        <p><strong>You can ask questions like:</strong></p>
-        <ul>
-          <li>1. What are the products that Chaitanya Aditya Solar Shopee sell?</li>
-          <li>2. How does a solar lamp work?</li>
-          <li>3. Do you have solar rooftop systems?</li>
-          <li>4. Provide me contact details.</li>
-        </ul>
-        <p><strong>Feel free to ask!</strong></p>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+
+      <label for="phonenumber">Phone Number</label>
+      <input type="text" id="phonenumber" name="Phone Number" placeholder="Enter your phone number" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email Address" placeholder="Enter your email">
+
+      <input type="submit" id="submit" value="Submit">
+      <div class="spinner" id="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      <div class="chat-content"> 
-
-      </div>
-      
-    </div>
-    <div class="input-box">
-      <input type="text" id="user-input" placeholder="Ask me something...">
-      <button id="send-btn"><img src="send.png" alt="Send"></button>
-    </div>
-    <div class="footer">
-      Powered by AI - Chaitanya Aditya Solar.
-    </div>
+    </form>
   </div>
-
-  <script src="script.js"></script>
+  <script src="Authentication.js"></script>
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #7AB8FD 0%, #004899 55%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    h4 {
+      font-size: 24px;
+      color: #004899;
+      margin-bottom: 20px;
+    }
+
+    input::placeholder {
+      color: #000000;
+      opacity: 0.1;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #004899;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: orangered;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #004899;
+    }
+
+    /* Spinner Styles */
+    .spinner {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .spinner div {
+      width: 10px;
+      height: 10px;
+      background-color: #004899;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .spinner div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .spinner div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="header.png" alt="Company Logo">
+
+    <form method="post" name="contact-form" action="https://script.google.com/macros/s/AKfycbwAJUmfIYGtJLmxb_Lr4RLOBzlZTg_tcrb0fkiYrGzOiR_nanYWNVw01Re1UCd-w9iftg/exec">
+      <h4>Login</h4>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+
+      <label for="phonenumber">Phone Number</label>
+      <input type="text" id="phonenumber" name="Phone Number" placeholder="Enter your phone number" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email Address" placeholder="Enter your email">
+
+      <input type="submit" id="submit" value="Submit">
+      <div class="spinner" id="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwAJUmfIYGtJLmxb_Lr4RLOBzlZTg_tcrb0fkiYrGzOiR_nanYWNVw01Re1UCd-w9iftg/exec';
+    const form = document.forms['contact-form'];
+    const spinner = document.getElementById('spinner');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      spinner.style.display = 'flex'; // Show the spinner
+      const userPhoneNumber = form['Phone Number'].value.trim();
+
+      try {
+        const response = await fetch(`${scriptURL}?action=getPhoneNumbers`);
+        const data = await response.json();
+
+        const phoneNumbers = data.phoneNumbers.map(num => String(num).trim());
+        if (phoneNumbers.includes(userPhoneNumber)) {
+          alert('Phone number already exists!');
+          spinner.style.display = 'none';
+          return;
+        }
+
+        const formData = new FormData(form);
+        const postResponse = await fetch(scriptURL, {
+          method: 'POST',
+          body: formData
+        });
+
+        const postData = await postResponse.json();
+        alert(postData.result === 'success' ? 'Thank you! Your form has been submitted successfully.' : postData.message || 'Unexpected error occurred.');
+        form.reset();
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again later.');
+      } finally {
+        spinner.style.display = 'none'; // Hide spinner after response
+      }
+    });
+  </script>
+</body>
+
+</html> -->
