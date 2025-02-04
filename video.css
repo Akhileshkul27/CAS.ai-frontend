@@ -80,18 +80,24 @@
 }
 
 
-/* Responsive Navigation */
 @media screen and (max-width: 400px) {
-    .topnav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .topnav {
+    width: 95%;
+    padding: 5px;
+  }
 
-    .topnav .nav-links {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 5px;
-    }
+  .topnav .nav-links {
+    justify-content: center;
+    gap: 0px;
+    padding: 1px;
+  }
+
+  .topnav .nav-links a {
+    width: auto;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 8px;
+  }
 }
 
 body {
