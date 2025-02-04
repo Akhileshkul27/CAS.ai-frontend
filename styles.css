@@ -83,20 +83,20 @@
 @media screen and (max-width: 400px) {
   .topnav {
     width: 95%;
-    padding: 10px;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 1px;
     padding: 5px;
   }
 
-  .nav-links a {
+  .topnav .nav-links {
+    justify-content: center;
+    gap: 0px;
+    padding: 1px;
+  }
+
+  .topnav .nav-links a {
     width: auto;
     text-align: center;
-    font-size: 12px;
-    padding: 5px 8px;
+    font-size: 13px;
+    padding: 10px 8px;
   }
 }
 
