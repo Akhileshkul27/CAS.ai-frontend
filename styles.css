@@ -1,103 +1,97 @@
 @keyframes fadeIn {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
+
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
-#myLinks .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 30px;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
 
- .logo-img {
-  height: 50px; /* Adjust the size as needed */
-  max-width: 200px; /* Maintain aspect ratio */
-  vertical-align: middle; /* Center the image vertically */
-  display: inline-block;
-  padding: 5px 0;
-}
-#myLinks .close-btn:hover {
-  color: #ff4747;
-}
-
-.topnav {
-  margin-top: 10px;
-  max-width: 400px;
-  overflow: hidden;
-  background-color: #184486;
-  position: relative;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-radius: 20px;
-  padding: 10px;
-  /* box-shadow: #c71a1a; */
-}
-
-.topnav a {
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav .icon {
-  display: block;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-}
-
-/* Slide-in menu styles */
-#myLinks {
-  position: fixed;
-  top: 0;
-  right: -250px; /* Initially hidden off-screen */
-  height: 100%;
-  width: 250px;
-  background-color: #184486;
-  overflow-y: auto;
-  transition: 0.3s; /* Smooth slide-in effect */
-  /* box-shadow: -4px 0 10px rgba(210, 18, 18, 0.2)0.2); */
-  z-index: 1000;
+/* .topnav {
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #184486;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 400px;
+  margin: 10px auto;
+  height: 120px;
+  position: relative;
+} */
+
+.topnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #184486;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 400px;
+  margin: 10px auto;
+  height: 120px;
+  position: relative;
+  box-sizing: border-box; /* Include padding and border within the specified max width */
 }
 
-#myLinks a {
+
+/* Header Image */
+.topnav .logo-img {
+  height: 60px;
+  width: 250px;
+  vertical-align: middle;
+  padding: 5px;
+  padding-bottom: 60px;
+  position: relative;
+  top: 5px;
+}
+
+.topnav .nav-links {
+  background-color: #1e90ff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  position: absolute;
+  bottom: 10px;
+  padding: 3px;
+}
+
+.topnav .nav-links a {
   color: white;
-  padding: 15px;
+  padding: 8px 15px;
   text-decoration: none;
-  font-size: 16px;
-  text-align: left;
-  border-bottom: 1px solid #444;
+  font-size: 10px;
+  opacity: 1;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-#myLinks a:hover {
-  background-color: #ffffff;
-  color: black;
+.topnav .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgb(255, 215, 0);
+  border-radius: 5px;
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
-/* Show the menu when active */
-#myLinks.show {
-  right: 0;
-}
 
+/* Responsive Navigation */
+@media screen and (max-width: 400px) {
+  .topnav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topnav .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -108,13 +102,16 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  animation: fadeIn 1.5s ease-out; /* Fade in the whole body on page load */
+  animation: fadeIn 1.5s ease-out;
+  /* Fade in the whole body on page load */
 
 }
+
 /* General Reset */
 .header-img {
-  width: 80%; /* Adjusted for responsiveness */
-  max-width: 360px; 
+  width: 80%;
+  /* Adjusted for responsiveness */
+  max-width: 360px;
   height: auto;
   /* align-self: center; */
   display: flex;
@@ -129,22 +126,25 @@ body {
   top: 0;
   left: 1;
   width: 100%;
-  height: 100%; 
-  opacity: 0.1; /* Adjust opacity as needed */
-  pointer-events: none; /* Prevent clicks from affecting the image */
+  height: 100%;
+  opacity: 0.1;
+  /* Adjust opacity as needed */
+  pointer-events: none;
+  /* Prevent clicks from affecting the image */
   z-index: -1;
 }
 
 .background-img img {
   width: 90%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 
 .header-img {
-  width: 80%; /* Adjusted for responsiveness */
-  max-width: 360px; 
+  width: 80%;
+  /* Adjusted for responsiveness */
+  max-width: 360px;
   height: auto;
   display: flex;
   align-self: center;
@@ -154,17 +154,22 @@ body {
 
 .welcome-message {
   color: white;
-  background-color: rgba(0, 51, 102, 0.7); /* Transparent background with a hint of blue */
+  background-color: rgba(0, 51, 102, 0.7);
+  /* Transparent background with a hint of blue */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
   text-align: left;
   font-size: 16px;
   line-height: 1.4;
-  opacity: 1; /* Ensure the opacity is set to 1 for visibility */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
-  animation: fadeIn 1.5s ease-out; /* Smooth fade-in animation */
-  font-family: 'Roboto', sans-serif; /* Professional, modern font */
+  opacity: 1;
+  /* Ensure the opacity is set to 1 for visibility */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for a 3D effect */
+  animation: fadeIn 1.5s ease-out;
+  /* Smooth fade-in animation */
+  font-family: 'Roboto', sans-serif;
+  /* Professional, modern font */
 }
 
 
@@ -172,7 +177,8 @@ body {
 .welcome-message h3 {
   font-size: 20px;
   font-weight: bold;
-  color: #ffdd00; /* Yellow color for emphasis */
+  color: #ffdd00;
+  /* Yellow color for emphasis */
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -188,31 +194,38 @@ body {
 .welcome-message li {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #f5f5f5; /* Soft off-white text */
+  color: #f5f5f5;
+  /* Soft off-white text */
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect for list items */
 .welcome-message li:hover {
-  transform: translateX(5px); /* Slight shift on hover */
-  color: #ffdd00; /* Highlight with yellow color */
+  transform: translateX(5px);
+  /* Slight shift on hover */
+  color: #ffdd00;
+  /* Highlight with yellow color */
 }
 
 /* Strong emphasis for questions */
 .welcome-message strong {
-  color: #ffdd00; /* Highlighted with yellow */
+  color: #ffdd00;
+  /* Highlighted with yellow */
   font-weight: bold;
 }
 
 /* Smooth transition for entire message */
 .welcome-message p {
   margin: 8px 0;
-  color: #f0f0f0; /* Light gray text for better readability */
+  color: #f0f0f0;
+  /* Light gray text for better readability */
 }
 
 .chat-container {
-  width: 90%; /* Make container width dynamic */
-  max-width: 400px; /* Limit max width */
+  width: 90%;
+  /* Make container width dynamic */
+  max-width: 400px;
+  /* Limit max width */
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -228,25 +241,31 @@ body {
   position: relative;
   width: 100%;
   padding: 10px;
-  height:300px;
+  height: 300px;
   flex: 1;
   overflow-y: auto;
-  display: flex; /* Enable flexbox for alignment */
-  flex-direction: column; /* Stack messages vertically */
-  animation: fadeIn 1.5s ease-out; /* Fade in the whole body on page load */
+  display: flex;
+  /* Enable flexbox for alignment */
+  flex-direction: column;
+  /* Stack messages vertically */
+  animation: fadeIn 1.5s ease-out;
+  /* Fade in the whole body on page load */
 }
 
 .chat-content {
-  position: absolute; /* Position chat content absolutely within chat-box */
-  top: 0; 
-  left: 0; 
+  position: absolute;
+  /* Position chat content absolutely within chat-box */
+  top: 0;
+  left: 0;
   right: 0;
-  width: 100%; 
-  height: 100%; /* Match chat-box height */
-  overflow-y: auto; /* Enable scrolling for chat content */
-  padding: 10px; 
+  width: 100%;
+  height: 100%;
+  /* Match chat-box height */
+  overflow-y: auto;
+  /* Enable scrolling for chat content */
+  padding: 10px;
   z-index: 1;
-  font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol !important;
+  font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol !important;
 }
 
 .footer {
@@ -284,7 +303,8 @@ body {
   max-width: 70%;
   padding: 15px;
   border-radius: 10px;
-  font-size: 14px; /* Adjusted for smaller screens */
+  font-size: 14px;
+  /* Adjusted for smaller screens */
 }
 
 .message.you .text {
@@ -309,8 +329,10 @@ body {
 
 .input-box input {
   flex: 1;
-  padding: 10px; /* Reduced padding for mobile */
-  font-size: 16px; /* Adjusted font size */
+  padding: 10px;
+  /* Reduced padding for mobile */
+  font-size: 16px;
+  /* Adjusted font size */
   border: none;
   border-radius: 10px;
   background-color: white;
@@ -322,10 +344,13 @@ body {
   border: none;
 }
 
-.input-box button, .input-box img {
+.input-box button,
+.input-box img {
   transition: 0.3s;
-  width: 35px; /* Reduced size */
-  height: 35px; /* Reduced size */
+  width: 35px;
+  /* Reduced size */
+  height: 35px;
+  /* Reduced size */
 }
 
 .input-box button {
@@ -375,55 +400,78 @@ button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
 #send-btn:hover {
-  transform: scale(1.1); /* Slightly enlarge the button */
+  transform: scale(1.1);
+  /* Slightly enlarge the button */
 }
 
 @keyframes blink {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .chat-container {
-      height: 80vh; /* Adjust height for smaller screens */
+    height: 80vh;
+    /* Adjust height for smaller screens */
   }
-  
+
   .message .text {
-      font-size: 13px; /* Reduce font size for better fit */
-      max-width: 90%; /* Expand message width */
+    font-size: 13px;
+    /* Reduce font size for better fit */
+    max-width: 90%;
+    /* Expand message width */
   }
-  
+
   .input-box {
-      padding: 10px; /* Adjust padding for smaller screens */
+    padding: 10px;
+    /* Adjust padding for smaller screens */
   }
-  
+
   .input-box input {
-      font-size: 14px; /* Smaller font size for input */
-      padding: 8px; /* Reduced padding */
+    font-size: 14px;
+    /* Smaller font size for input */
+    padding: 8px;
+    /* Reduced padding */
   }
-  
-  .input-box button, .input-box img {
-      width: 30px; /* Smaller button for mobile */
-      height: 30px;
+
+  .input-box button,
+  .input-box img {
+    width: 30px;
+    /* Smaller button for mobile */
+    height: 30px;
   }
-  
+
   .header-img {
-      width: 70%; /* Adjust logo size */
+    width: 70%;
+    /* Adjust logo size */
   }
 }
+
 #chat-box {
-  overflow-y: scroll;  /* Enable scrolling */
-  scrollbar-width: none;  /* For Firefox */
+  overflow-y: scroll;
+  /* Enable scrolling */
+  scrollbar-width: none;
+  /* For Firefox */
 }
 
 #chat-box::-webkit-scrollbar {
-  display: none;  /* For Chrome, Safari, and Edge */
+  display: none;
+  /* For Chrome, Safari, and Edge */
 }
 
 .fade-in {
@@ -437,13 +485,15 @@ button {
     opacity: 0;
     color: white;
   }
+
   100% {
     opacity: 1;
-    color: black; /* Adjust to your desired final text color */
+    color: black;
+    /* Adjust to your desired final text color */
   }
 }
 
 /*Contact Us */
-.contact-us-div{
+.contact-us-div {
   background-color: #004899;
 }
