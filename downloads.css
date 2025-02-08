@@ -1,0 +1,119 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.topnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #184486;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 400px;
+    margin: 10px auto;
+    height: 120px;
+    position: relative;
+    box-sizing: border-box;
+    /* Include padding and border within the specified max width */
+}
+
+/* Header Image */
+.topnav .logo-img {
+    height: 60px;
+    max-width: 300px;
+    vertical-align: middle;
+    padding: 5px;
+    padding-bottom: 60px;
+    position: relative;
+    top: 5px;
+}
+
+.topnav .nav-links {
+    background-color: #1e90ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    position: absolute;
+    bottom: 10px;
+    padding: 3px;
+}
+
+.topnav .nav-links a {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 10px;
+    opacity: 1;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.topnav .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgb(255, 215, 0);
+    border-radius: 5px;
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+
+/* Responsive Navigation */
+@media screen and (max-width: 400px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topnav .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #7AB8FD 0%, #004899 40%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    animation: fadeIn 1.5s ease-out;
+
+    /* Fade in the whole body on page load */
+}
+
+.footer {
+    align-self: center;
+    font-size: 12px;
+    color: white;
+    padding-top: 0px;
+    opacity: 0.4;
+    margin-top: 20px;
+    margin-left: 11px;
+}
+
+.pdf-container {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 400px;
+    gap: 20px;
+}
+
+#mypdf {
+    width: 100%;
+    height: 975px;
+}
+
