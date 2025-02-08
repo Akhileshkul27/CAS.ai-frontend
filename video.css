@@ -99,6 +99,39 @@
     padding: 10px 8px;
   }
 }
+.pamphlet-tail {
+    position: absolute;
+    top: 120px;
+    right: 14px;
+    background-color: #56aaff;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 0 0 15px 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.pamphlet-tail:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #184486;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 body {
     font-family: Arial, sans-serif;
