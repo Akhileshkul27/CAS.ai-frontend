@@ -467,6 +467,8 @@ button {
     width: 70%;
     /* Adjust logo size */
   }
+  body{
+    height: 110vh;
 }
 
 #chat-box {
