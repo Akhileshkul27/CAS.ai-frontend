@@ -540,3 +540,39 @@ button {
 .contact-us-div {
   background-color: #004899;
 }
+
+
+.marquee-container {
+  z-index: 10;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 25px auto 0; 
+  height: 35px;
+  background-color: #003f7f;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.3), -3px 0 8px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #007acc;
+  border-right: 5px solid #007acc;
+}
+
+.marquee-content {
+  align-items: center;
+  position: absolute;
+  white-space: nowrap;
+  font-size: 14px;
+  color: white;
+  font-weight:800;
+  animation: scrollText 15s linear infinite;
+  padding: 5px 15px;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
